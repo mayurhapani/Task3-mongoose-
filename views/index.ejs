@@ -11,32 +11,57 @@
       <table align="center" border="">
         <tr>
           <td>
-            <input type="text" name="username" placeholder="Username" />
+            <input
+              type="text"
+              name="username"
+              placeholder="Username"
+              value="<%= editedUser?editedUser.username:'' %>"
+            />
           </td>
         </tr>
         <tr>
           <td>
-            <input type="email" name="email" placeholder="Email" />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              value="<%= editedUser?editedUser.email:'' %>"
+            />
           </td>
         </tr>
         <tr>
           <td>
-            <input type="password" name="password" placeholder="Password" />
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              value="<%= editedUser?editedUser.password:'' %>"
+            />
           </td>
         </tr>
         <tr>
           <td>
-            <input type="number" name="age" placeholder="Age" />
+            <input
+              type="number"
+              name="age"
+              placeholder="Age"
+              value="<%= editedUser?editedUser.age:'' %>"
+            />
           </td>
         </tr>
         <tr>
           <td>
-            <input type="number" name="mobile" placeholder="Moblie No." />
+            <input
+              type="number"
+              name="mobile"
+              placeholder="Moblie No."
+              value="<%= editedUser?editedUser.mobile:'' %>"
+            />
           </td>
         </tr>
         <tr>
           <td>
-            <input type="submit" value="Submit" />
+            <input type="submit" value="<%= isId?'Edit':'Submit'%>" />
           </td>
         </tr>
       </table>
@@ -60,6 +85,7 @@
         <td><%= age %></td>
         <td><%= mobile %></td>
         <td><a href="/deleteData?id=<%=_id%>">Delete</a></td>
+        <td><a href="/editData?id=<%=_id%>">Edit</a></td>
       </tr>
       <% }) %>
     </table>
