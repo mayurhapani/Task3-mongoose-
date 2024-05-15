@@ -41,5 +41,27 @@
         </tr>
       </table>
     </form>
+
+    <table align="center" border="">
+      <tr>
+        <td>Name</td>
+        <td>Email</td>
+        <td>Password</td>
+        <td>Age</td>
+        <td>Moblie</td>
+        <td>Action</td>
+      </tr>
+
+      <% users.map((user)=>{ %> <% const {_id,username, email,password,age,mobile}= user %>
+      <tr>
+        <td><%= username %></td>
+        <td><%= email %></td>
+        <td><%= password %></td>
+        <td><%= age %></td>
+        <td><%= mobile %></td>
+        <td><a href="/deleteData?id=<%=_id%>">Delete</a></td>
+      </tr>
+      <% }) %>
+    </table>
   </body>
 </html>
